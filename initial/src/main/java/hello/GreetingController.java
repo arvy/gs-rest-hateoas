@@ -1,5 +1,9 @@
 package hello;
 
+import com.codahale.metrics.annotation.Gauge;
+import com.codahale.metrics.annotation.Metered;
+import com.codahale.metrics.annotation.Timed;
+import com.ryantenney.metrics.annotation.Counted;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -15,6 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class GreetingController {
 
     public static final String TEMPLATE = "Hello, %s";
+
+//    @Metered
+//    @Gauge
+    @Timed
+//    @Counted(name = "greetingCount")
 
     @RequestMapping("/greeting")
     public HttpEntity<Greeting> greeting(
