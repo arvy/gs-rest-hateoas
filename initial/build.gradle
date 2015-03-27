@@ -1,3 +1,5 @@
+def metricsVersion = '3.1.1'
+
 buildscript {
     repositories {
         mavenCentral()
@@ -23,10 +25,23 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-aop")
     compile("com.fasterxml.jackson.core:jackson-databind")
     compile("org.springframework.hateoas:spring-hateoas")
     compile("org.springframework.plugin:spring-plugin-core:1.1.0.RELEASE")
     compile("com.jayway.jsonpath:json-path:0.9.1")
+
+    compile("io.dropwizard.metrics:metrics-core:${metricsVersion}")
+    compile("io.dropwizard.metrics:metrics-servlets:${metricsVersion}")
+    compile("io.dropwizard.metrics:metrics-annotation:${metricsVersion}")
+    compile("com.ryantenney.metrics:metrics-spring:3.0.3")
+    compile "io.dropwizard.metrics:metrics-httpclient:${metricsVersion}"
+    compile "io.dropwizard.metrics:metrics-jvm:${metricsVersion}"
+    compile "org.elasticsearch:metrics-elasticsearch-reporter:2.0"
+
+    compile 'org.apache.httpcomponents:httpclient:4.2.5'
+    compile 'org.apache.httpcomponents:httpclient-cache:4.2.5'
+
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
