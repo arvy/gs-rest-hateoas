@@ -15,4 +15,6 @@ dependency-reduced-pom.xml
 
 README.html
 *.iml
+*.ipr
+*.iws
 .idea
